@@ -19,11 +19,5 @@ This is early work. suggestions and/or pull request are welcomed.
 
 ## Let's use it
 
-It is quite simple really. To instanciate a context, just do 
-
-```
-    var gl = NoWebGL.getContext();
-```
-
-Instead of the usual ```domElement.getContext('experimental-webgl');```
-
+Well it is all you need :) It will replace normal ```canvas.getContext``` function
+and provide a ```NoWebGL.Context```.

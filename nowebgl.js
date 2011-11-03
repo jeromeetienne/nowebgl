@@ -74,7 +74,17 @@ NoWebGL.Fct.returnTrue		= function(){ return true;	}
 NoWebGL.Fct.returnObject	= function(){ return {};	}
 
 NoWebGL.Context		= {};
-NoWebGL.getContext	= function(){	return NoWebGL.Context;	}
+NoWebGL.getContext	= function(contextId){
+	if( contextId != "experimental-webgl" )	return origGetContext.apply(this, arguments);
+	return NoWebGL.Context;
+}
+
+// hijack the normal HTMLCanvasElement
+var origGetContext	= HTMLCanvasElement.prototype.getContext;
+HTMLCanvasElement.prototype.getContext  = NoWebGL.getContext;
+NoWebGL.noConflict	= function(){
+	HTMLCanvasElement.prototype.getContext  = origGetContext;
+}
 
 NoWebGL.Fct.constantList.forEach(function(method){
 	NoWebGL.Context[method]	= 1;	// each constant is equal to 1

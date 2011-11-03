@@ -5,8 +5,8 @@
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
 <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
-<script type="text/javascript" src="../../nowebgl.js"></script>
-
+<!--<script type="text/javascript" src="../../nowebgl.js"></script>
+-->
 <script id="shader-fs" type="x-shader/x-fragment">
     #ifdef GL_ES
     precision highp float;
@@ -34,10 +34,10 @@
     var gl;
     function initGL(canvas) {
         try {
-            //gl = canvas.getContext("experimental-webgl");
-            gl = NoWebGL.getContext();
+            gl = canvas.getContext("experimental-webgl");
             gl.viewportWidth = canvas.width;
             gl.viewportHeight = canvas.height;
+console.dir(gl)
         } catch (e) {
         }
         if (!gl) {
