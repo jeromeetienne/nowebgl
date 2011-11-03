@@ -1,7 +1,7 @@
-(function(global){
+(function(exports){
 	
 var NoWebGL	= {};
-global.NoWebGL	= NoWebGL;
+exports.NoWebGL	= NoWebGL;
 
 //////////////////////////////////////////////////////////////////////////////////
 //		define all the functions to emulate				//
