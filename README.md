@@ -11,13 +11,13 @@ This is directly inpired from [firebugx](http://code.google.com/p/fbug/source/br
 There is a [learningwebgl.com](http://learningwebgl.com/blog/?p=28) lesson as example.
 This is early work. suggestions and/or pull request are welcomed.
 
-## Let's include it
+## How to use it
+
+Just copy this line
 
 ```
-    <script src="nowebgl.js"></script>
+<script src="nowebgl.js"></script>
 ```
 
-## Let's use it
-
-Well it is all you need :) It will replace normal ```canvas.getContext``` function
+It is all you need :) It will replace normal ```canvas.getContext``` function
 and provide a ```NoWebGL.Context```.
