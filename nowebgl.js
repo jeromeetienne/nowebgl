@@ -70,6 +70,8 @@ NoWebGL.Fct.undefinedList	= [
 	'useProgram',
 
 	'enableVertexAttribArray',
+
+	'pixelStorei',
 ];
 
 // list of function returning true
@@ -80,6 +82,14 @@ NoWebGL.Fct.trueList	= [
 	
 	'framebufferTexture2D',
 	'framebufferRenderbuffer',
+];
+
+// list of function returning ''
+NoWebGL.Fct.strList	= [
+	'getActiveAttrib',
+	'getActiveUniform',
+	'getProgramInfoLog',
+	'getShaderInfoLog',
 ];
 
 // list of function returning {}
@@ -103,6 +113,7 @@ NoWebGL.Fct.constantList	= [
 // define the various functions
 NoWebGL.Fct.returnUndefined	= function(){ return undefined;	}
 NoWebGL.Fct.returnTrue		= function(){ return true;	}
+NoWebGL.Fct.returnString        = function(){ return '';        }
 NoWebGL.Fct.returnObject	= function(){ return {};	}
 
 NoWebGL.Context		= {};
@@ -126,6 +137,9 @@ NoWebGL.Fct.undefinedList.forEach(function(method){
 });
 NoWebGL.Fct.trueList.forEach(function(method){
 	NoWebGL.Context[method]	= NoWebGL.Fct.returnTrue;
+});
+NoWebGL.Fct.strList.forEach(function(method){
+	NoWebGL.Context[method]	= NoWebGL.Fct.returnString;
 });
 NoWebGL.Fct.objList.forEach(function(method){
 	NoWebGL.Context[method]	= NoWebGL.Fct.returnObject;
